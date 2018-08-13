@@ -10,6 +10,8 @@
 *~
 *.sass-cache
 node_modules/
+*.jpg
+*.svg
 .tmp/
 
 # OS or Editor folders
