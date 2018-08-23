@@ -1128,6 +1128,10 @@ Instead edit gulp/templates/sprite */
   }
   }
 
+.site-header__menu-content--is-visible {
+      display: block;
+    }
+
 .site-header__menu-icon {
     position: absolute;
     width: 20px;
