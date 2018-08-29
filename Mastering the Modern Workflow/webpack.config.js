@@ -10,7 +10,7 @@ module.exports = {
     filename: "[name].js"
   },
   module: {
-    loaders: [
+    loaders: [ 
       {
         loader: 'babel-loader',
         query: {

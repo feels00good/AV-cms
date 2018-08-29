@@ -11612,7 +11612,6 @@ var StickyHeader = function () {
   function StickyHeader() {
     _classCallCheck(this, StickyHeader);
 
-    this.lazyImages = (0, _jquery2.default)('.lazyload');
     this.siteHeader = (0, _jquery2.default)('.site-header');
     this.headerTriggerElement = (0, _jquery2.default)('.page-section');
     this.pageSections = (0, _jquery2.default)('.page-section');
@@ -11620,17 +11619,9 @@ var StickyHeader = function () {
     this.createHeaderWaypoint();
     this.createPageSectionsWaypoints();
     this.addSmoothScrolling();
-    this.refreshWaypoints();
   }
 
   _createClass(StickyHeader, [{
-    key: 'refreshWaypoints',
-    value: function refreshWaypoints() {
-      this.lazyImages.load(function () {
-        Waypoint.refreshAll();
-      });
-    }
-  }, {
     key: 'addSmoothScrolling',
     value: function addSmoothScrolling() {
       this.headerLinks.smoothScroll();
@@ -11659,26 +11650,11 @@ var StickyHeader = function () {
         var currentPageSection = this;
         new Waypoint({
           element: currentPageSection,
-          handler: function handler(direction) {
-            if (direction == "down") {
-              var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
-              that.headerLinks.removeClass('is-current-link');
-              (0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
-            }
-          },
-          offset: "18%"
-        });
-
-        new Waypoint({
-          element: currentPageSection,
-          handler: function handler(direction) {
-            if (direction == "up") {
-              var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
-              that.headerLinks.removeClass('is-current-link');
-              (0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
-            }
-          },
-          offset: "-40%"
+          handler: function handler() {
+            var matchingHeaderLink = currentPageSection.getAttribute('data-matching-link');
+            that.headerLinks.removeClass('is-current-link');
+            (0, _jquery2.default)(matchingHeaderLink).addClass('is-current-link');
+          }
         });
       });
     }
