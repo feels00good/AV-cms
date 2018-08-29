@@ -7,17 +7,6 @@ var gulp = require('gulp'),
   uglify = require('gulp-uglify'),
   browserSync = require('browser-sync').create();
 
-gulp.task('peviewDist', function() {
-
-   browserSync.init({
-    browser: "google chrome",
-    notify: false,
-    server: {
-      baseDir: "dist",
-    }  
-  });
-})
-
 
 gulp.task('deleteDistFolder', ['icons'], function() { 
   return del('./dist');
@@ -45,5 +34,17 @@ gulp.task('usemin', ['styles', 'scripts'], function() {
     }))
     .pipe(gulp.dest('./dist'));
 })
+
+gulp.task('peviewDist', ['usemin'], function() {
+
+   browserSync.init({
+    browser: "google chrome",
+    notify: false,
+    server: {
+      baseDir: "dist",
+    }  
+  });
+})
+
 
 gulp.task('build', ['deleteDistFolder', 'optimizeImages', 'useminTrigger', 'peviewDist']);
