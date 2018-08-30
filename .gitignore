@@ -13,6 +13,7 @@ node_modules/
 *.jpg
 *.svg
 .tmp/
+dist/
 
 # OS or Editor folders
 .DS_Store
