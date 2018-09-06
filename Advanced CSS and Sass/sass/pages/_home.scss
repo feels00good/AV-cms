@@ -10,7 +10,7 @@
     to right bottom, 
     rgba($primary-light, 0.8), 
     rgba($primary-dark, 0.8)),
-     url('../img/nat-4.jpg');
+    url('../img/nat-4.jpg');
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -15rem;
@@ -45,7 +45,7 @@
   background-size: cover;
   border-radius: 3px;
   box-shadow: 0 1.4rem 4rem rgba($black, .25);
-  height: 50rem;
+  // height: 50rem;
 
   &__form {
     width: 50%;
