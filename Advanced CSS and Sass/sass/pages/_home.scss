@@ -2,6 +2,10 @@
   background: $grey-light;
   padding: 25rem 0;
   margin-top: -20vh;
+
+  @include resp(tab-port) {
+    padding: 20rem 0;
+  } 
 }
 
 .section-features {
@@ -14,6 +18,10 @@
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -15rem;
+
+  @include resp(tab-port) {
+    padding: 20rem 0;
+  } 
   
   & > * {
     transform: skewY(7deg);
@@ -24,11 +32,20 @@
   background: $grey-light;
   padding: 35rem 0 15rem 0;
   margin-top: -15rem;
+
+  @include resp(tab-port) {
+    padding: 25rem 10rem;
+  } 
+
 }
 
 .section-stories {
   position: relative;
   padding: 15rem 0;
+
+  @include resp(tab-port) {
+    padding: 10rem 0rem;
+  } 
 }
 
 .section-book {
