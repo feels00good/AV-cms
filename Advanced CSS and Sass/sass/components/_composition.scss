@@ -1,8 +1,5 @@
 .composition {
   position: relative;
-  @include resp(tab-port) {
-    margin-bottom: 15rem;
-  }
 
   &__photo {
     width: 55%;

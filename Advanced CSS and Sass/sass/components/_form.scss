@@ -49,9 +49,14 @@
 
   &__radio-group {
     width: 50%;
-    // display: inline-block;
     float: left;
+
+    @include resp(tab-port){
+      width: 100%;
+      float: none;
+    }
   }
+
 
   &__radio-input {
     display: none;

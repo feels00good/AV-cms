@@ -1,12 +1,10 @@
 .row {
-
   max-width: $grid-width;
   margin: 0 auto;
   padding: 0 3rem;
 
   @include resp(tab-port){
-    max-width: 50rem;
-
+    max-width: 60rem;
   }
 
   &:not(:last-child) {

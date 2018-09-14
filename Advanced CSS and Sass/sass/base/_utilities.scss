@@ -24,6 +24,9 @@
 
 .u-margin-top-big {
   margin-top: 8rem;
+  @include resp(tab-port) {
+    margin-top: 4rem;
+  } 
 }
 
 
