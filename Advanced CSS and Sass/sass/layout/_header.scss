@@ -11,9 +11,9 @@
   -webpack-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
-  @include resp(phone){
-    -webpack-clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 90vh, 0 100%);
+  @include resp(tab-land){
+    -webpack-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   }
 
   &__logo-box {

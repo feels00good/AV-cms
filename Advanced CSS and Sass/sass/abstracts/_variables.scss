@@ -19,6 +19,10 @@ $tertiary-dark: #5643fa;
 $grid-width: 114rem;
 $gutter-vertial: 8rem; 
 $gutter-vertial-small: 5rem; 
-$gutter-horizontal: 8rem;
+
+$gutter-horizontal: 5rem;
+// @include resp(tab-land){
+//   $gutter-horizontal: 3rem;
+// }
 
 $default-font-size: 1.6rem;

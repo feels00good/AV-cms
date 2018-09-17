@@ -15,6 +15,7 @@
       position: relative;
       width: 33.3333%;
       box-shadow: 0 1.5rem 3rem rgba($black, .2);
+      outline-offset: 1rem;
     } 
 
     &--p1 {
@@ -22,7 +23,7 @@
       top: -2rem;
 
       @include resp(tab-port) {
-        top: 0;
+        top: 1rem;
         transform: scale(1.2);
       }
     } 
@@ -43,7 +44,7 @@
       @include resp(tab-port) {
         top: 1rem;
         left: 0;
-        transform: scale(1.1);
+        transform: scale(1.2);
       }
     } 
 
@@ -52,10 +53,19 @@
       transform: scale(1.05) translateY(-.5rem);
       box-shadow: 0 2.5rem 4rem rgba($black, .5);
       z-index: 20;
+
+      @include resp(tab-port) {
+        outline: 1rem solid $primary;
+        transform: scale(1.25) translateY(-.5rem);
+      }
     }
   }
 
   &:hover &__photo:not(:hover) {
     transform: scale(.95);
+
+    @include resp(tab-port) {
+      transform: scale(1.1);
+    }
   }
 }
