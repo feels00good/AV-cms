@@ -4,15 +4,25 @@
     to right bottom, 
     rgba($primary-light, 0.8), 
     rgba($primary-dark, 0.8)),
-     url('../img/hero.jpg');
+    url('../img/hero-small.jpg');
   background-size: cover;
   background-position: top;
   position: relative;
-  -webpack-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
+  @media (min-resolution: 192dpi) and (min-width: 37.5em),
+         (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em),
+         (min-width: 112.5em) {
+          background-image: linear-gradient(
+          to right bottom, 
+          rgba($primary-light, 0.8), 
+          rgba($primary-dark, 0.8)),
+          url('../img/hero.jpg');
+  }
+
   @include resp(tab-land){
-    -webpack-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
   }
 

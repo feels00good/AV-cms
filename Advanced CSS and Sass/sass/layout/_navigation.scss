@@ -113,7 +113,7 @@
   &__icon {
     position: relative;
     margin-top: 3.5rem;
-
+    transition: background-color 0s .1s ;
     &,
     &::before,
     &::after {
@@ -121,6 +121,7 @@
       height: 2px;
       background-color: $grey-super-dark;
       display: inline-block;
+  
     }
 
     &::before,
@@ -150,6 +151,7 @@
 
   &__checkbox:checked + &__button &__icon {
     background-color: transparent;
+    transition: background-color 0s;
   }
 
   &__checkbox:checked + &__button &__icon::before {
@@ -161,5 +163,4 @@
     top: 0;
     transform: rotate(135deg);
   }
-
 }
