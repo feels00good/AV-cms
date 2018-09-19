@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "node-sass sass/main.scss css/style.css -w"
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css "
   },
   "author": "feels00good",
   "license": "ISC",
   "devDependencies": {
+    "concat": "^1.0.3",
     "node-sass": "^4.13.0"
   }
 }
