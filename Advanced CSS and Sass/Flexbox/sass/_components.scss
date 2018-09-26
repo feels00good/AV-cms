@@ -444,3 +444,67 @@
     font-family: sans-serif;
   }
 }
+
+
+/////////////////////////////////////
+// CALL TO ACTION
+
+.cta {
+  padding: 3.5rem 0;
+  text-align: center;
+
+  &__book-now {
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.btn {
+  font-size: 1.5rem;
+  border: none;
+  text-transform: uppercase;
+  border-radius: 100px;
+  position: relative;
+  background-image: linear-gradient(to right, var(--c-primary-light), var(--c-primary-dark));
+  color: #fff;
+  overflow: hidden;
+  cursor: pointer;
+
+  & > * {
+    height: 100%;
+    width: 100%;
+    display: inline-block;
+    transition: all .3s;
+  }
+
+  &__visible {
+    padding: 2rem 7.5rem;
+  }
+
+  &__invisible {
+    position: absolute;
+    padding: 2rem 0;
+    left: 0;
+    top: -100%;
+  }
+
+
+  &:hover {
+    background-image: linear-gradient(to left, var(--c-primary-light), var(--c-primary-dark));
+  }
+  &:hover &__visible {
+    transform: translateY(100%);
+  }
+
+  &:hover &__invisible {
+    top: 0;
+  }
+
+  &:focus {
+    outline: none;
+    animation: pulsate .9s infinite;
+  }
+
+}
