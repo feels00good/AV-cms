@@ -3,20 +3,35 @@
   margin: 8rem auto;
   background-color: var(--c-grey-light-2);
   box-shadow: var(--shadow-dark);
+
+  @media only screen and (max-width: $bp-largest) {
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+  }
 }
 
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   height: 7rem;
   background-color: #fff;
   border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-smallest) {
+    flex-wrap: wrap;
+    height: 11.5rem;
+  }
 }
 
 .content {
   display: flex;
+
+  @media only screen and (max-width: $bp-medium) {
+    flex-direction: column;
+  }
 }
 
 .sidebar {
@@ -33,20 +48,39 @@
 }
 
 .detail {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   display: flex;
   padding: 3.5rem;
   background-color: var(--c-grey-light-1);
   border-bottom: var(--line);
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+  }
 }
 
 .description {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   background-color:#fff;
   flex: 0 0 60%;
   box-shadow: var(--shadow-light);
   padding: 3rem;
   margin-right: 3.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem;
+    margin-right: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-small) {
+    margin-right: 0rem;
+    margin-bottom: 2rem;
+  }
+  
 }
 
 .user-reviews {

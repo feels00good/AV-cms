@@ -16,6 +16,11 @@
   align-items: center;
   justify-content: center;
 
+  @media only screen and (max-width: $bp-smallest) {
+    order: 1;
+    flex: 0 0 100%;
+  }
+
   &__input {
     font-family: inherit;
     font-size: inherit;
@@ -28,10 +33,18 @@
     margin-right: -3.25rem;
     transition: all .2s;
 
+    @media only screen and (max-width: $bp-smallest) {
+      margin-left: -1.4rem;
+    }
+
     &:focus {
       outline: none;
       width: 100%;
       background-color: var(--c-grey-light-3);
+
+      @media only screen and (max-width: $bp-smallest) {
+        width: 95%;
+      }
     }
 
     &::-webkit-input-placeholder {
@@ -61,7 +74,6 @@
 // USER NAVIGATION
 
 .user-nav {
-
   align-self: stretch;
   display: flex;
   align-items: center;
@@ -84,6 +96,7 @@
   }
 
   &__icon {
+    margin-top: 0.8rem;
     height: 2.25rem;
     width: 2.25rem;
     fill: var(--c-grey-dark-2);
@@ -91,14 +104,14 @@
   }
 
   &__notification {
-    font-size: .8rem;
+    font-size: 1.1rem;
     height: 1.75rem;
     width: 1.75rem;
     border-radius: 50%;
     background-color: var(--c-primary);
     color: #fff;
     position: absolute;
-    top: 1.5rem;
+    top: 1.8rem;
     right: 1.1rem;
     display: flex;
     justify-content: center;
@@ -120,15 +133,27 @@
 
 .side-nav {
 
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   list-style: none;
   margin-top: 3.5rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    display: flex;
+    margin: 0;
+  }
 
   &__item {
     position: relative;
 
     &:not(:last-child) {
       margin-bottom: .5rem;
+      @media only screen and (max-width: $bp-medium) {
+        margin-bottom: 0;
+      }
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 1;
     }
   }
 
@@ -167,6 +192,16 @@
     align-items: center;
     position: relative;
     z-index: 10;
+
+    @media only screen and (max-width: $bp-medium) {
+      justify-content: center;
+      padding: 2rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      padding: 1.5rem;
+    }
   }
 
   &__icon {
@@ -174,6 +209,12 @@
     height: 1.75rem;
     margin-right: 2rem;
     fill: currentColor;
+
+    @media only screen and (max-width: $bp-small) {
+      margin-right: 0;
+      width: 1.5rem;
+      height: 1.5rem;
+    }
   }
 }
 
@@ -182,10 +223,14 @@
 // LEGAL TEXT
 
 .legal {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   text-align: center;
   padding: 2.5rem;
   color:var(--c-grey-light-4);
+
+  @media only screen and (max-width: $bp-medium) {
+    display: none
+  }
 }
 
 
@@ -216,6 +261,11 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.5rem 3rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 1.25rem 2rem;
+    }
   }
 
   &__stars {
@@ -231,7 +281,7 @@
   }
 
   &__location {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     display: flex;
     vertical-align: center;
   }
@@ -246,16 +296,30 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      padding: 0rem 1.5rem;
+    }
   }
   
   &__rating--average {
-    font-size: 2.25rem;
+    font-size: 2.3rem;
     font-weight: 300;
-    margin-bottom: -3px;
+    margin-bottom: -7px;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: 1.8rem;
+      margin-bottom: -5px;
+    }
   }
 
   &__rating--count {
-    font-size: .9rem;
+    font-size: 1.1rem;
+
+    @media only screen and (max-width: $bp-small) {
+      font-size: .9rem;
+    }
   }
 }
 
@@ -343,17 +407,20 @@
     margin-right: 0.7rem;
 
     // Older browsers
-    // background-image: url(../img/chevron-thin-right.svg);
-    // background-size: cover;
+    background-image: url(../img/chevron-thin-right.svg);
+    background-size: cover;
     
     // Newer browsers - masks
-    background-color: var(--c-primary);
-    -webkit-mask-image: url(../img/chevron-thin-right.svg);
-    -webkit-mask-size: cover;
-    mask-image: url(../img/chevron-thin-right.svg);
-    mask-size: cover;
+    @supports (-webkit-mask-image: url() or (mask-image: url())){
+      background-color: var(--c-primary);
+      -webkit-mask-image: url(../img/chevron-thin-right.svg);
+      -webkit-mask-size: cover;
+      mask-image: url(../img/chevron-thin-right.svg);
+      mask-size: cover;
+      background-image: none;
+    }
   }
-}
+} 
 
 
 /////////////////////////////////////
@@ -361,17 +428,19 @@
 
 .recommend {
   box-sizing: content-box;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: var(--c-grey-dark-3);
   display: flex;
+
   align-items: center;
 
   &__count {
     margin-right: auto;
+    // flex: 0 0 50%;
   }
 
   &__guests {
-
+    display: flex;
   }
 
   &__photo {
@@ -379,7 +448,7 @@
     width: 4rem;
     border-radius: 50%;
     border: 3px solid #fff;
-    margin-right: -1.25rem;
+    margin-right: -1.5rem;
   }
 }
 
@@ -394,6 +463,11 @@
   margin-bottom: 3.5rem;
   position: relative;
   overflow: hidden;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
 
   &__text {
     z-index: 10;
@@ -419,8 +493,8 @@
 
   &__user-name {
     text-transform: uppercase;
-    // font-weight: 600;
-    font-size: 1.5rem;
+    font-weight: 600;
+    font-size: 1.6rem;
     line-height: 1;
   }
 
@@ -429,16 +503,16 @@
   }
 
   &__rating {    
-    font-size: 2.5rem;
+    font-size: 2.7rem;
     color: var(--c-primary);
   }
 
   &::before {
     content: "\201C";
     position: absolute;
-    top: -9rem;
+    top: -11rem;
     left: -1rem;
-    font-size: 20rem;
+    font-size: 25rem;
     color: var(--c-grey-light-2);
     z-index: 1;
     font-family: sans-serif;
@@ -455,10 +529,15 @@
 
   &__book-now {
     text-transform: uppercase;
-    font-size: 1.8rem;
+    font-size: 2.3rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
   }
+
+  @media only screen and (max-width: $bp-medium) {
+    padding: 2.5rem 0;
+  }
+  
 }
 
 .btn {
@@ -468,6 +547,7 @@
   border-radius: 100px;
   position: relative;
   background-image: linear-gradient(to right, var(--c-primary-light), var(--c-primary-dark));
+  background-size: 100%;
   color: #fff;
   overflow: hidden;
   cursor: pointer;
@@ -492,7 +572,7 @@
 
 
   &:hover {
-    background-image: linear-gradient(to left, var(--c-primary-light), var(--c-primary-dark));
+    background-size: 150%;
   }
   &:hover &__visible {
     transform: translateY(100%);
