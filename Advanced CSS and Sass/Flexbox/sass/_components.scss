@@ -104,7 +104,7 @@
   }
 
   &__notification {
-    font-size: 1.1rem;
+    font-size: 1rem;
     height: 1.75rem;
     width: 1.75rem;
     border-radius: 50%;
@@ -133,7 +133,7 @@
 
 .side-nav {
 
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   list-style: none;
   margin-top: 3.5rem;
 
@@ -223,7 +223,7 @@
 // LEGAL TEXT
 
 .legal {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   text-align: center;
   padding: 2.5rem;
   color:var(--c-grey-light-4);
@@ -306,11 +306,10 @@
   &__rating--average {
     font-size: 2.3rem;
     font-weight: 300;
-    margin-bottom: -7px;
+    margin-bottom: -5px;
 
     @media only screen and (max-width: $bp-small) {
       font-size: 1.8rem;
-      margin-bottom: -5px;
     }
   }
 
@@ -428,7 +427,7 @@
 
 .recommend {
   box-sizing: content-box;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   color: var(--c-grey-dark-3);
   display: flex;
 
@@ -436,7 +435,11 @@
 
   &__count {
     margin-right: auto;
-    // flex: 0 0 50%;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex: 0 1 60%;
+    }
+    
   }
 
   &__guests {
@@ -529,9 +532,10 @@
 
   &__book-now {
     text-transform: uppercase;
-    font-size: 2.3rem;
+    font-size: 2rem;
     font-weight: 300;
     margin-bottom: 2.5rem;
+    padding: 0 2rem;
   }
 
   @media only screen and (max-width: $bp-medium) {
