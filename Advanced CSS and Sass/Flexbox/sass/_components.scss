@@ -492,19 +492,17 @@
   &__user-box {
     margin-right: auto;
     margin-left: 1.5rem;
+    font-size: 1.1rem;
   }
 
   &__user-name {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     line-height: 1;
   }
 
-  &__user-date {
-    font-size: 1rem;
-  }
-
+  
   &__rating {    
     font-size: 2.7rem;
     color: var(--c-primary);

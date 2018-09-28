@@ -434,14 +434,13 @@ body {
     border-radius: 50%; }
   .review__user-box {
     margin-right: auto;
-    margin-left: 1.5rem; }
+    margin-left: 1.5rem;
+    font-size: 1.1rem; }
   .review__user-name {
     text-transform: uppercase;
     font-weight: 600;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     line-height: 1; }
-  .review__user-date {
-    font-size: 1rem; }
   .review__rating {
     font-size: 2.7rem;
     color: var(--c-primary); }
